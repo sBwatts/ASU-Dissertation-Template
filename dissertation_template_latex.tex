@@ -24,6 +24,11 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % (Some) Packages
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{apacite}
+\usepackage{lscape}
+\usepackage{booktabs}
+\usepackage{rotating}
+\usepackage{adjustbox}
 \usepackage{graphicx}                   % For importing image files
 \usepackage{etoolbox}                   % For advanced commands throughout preamble
 \usepackage{microtype}                  %~Improves kerning and protrusion (optional);
@@ -45,31 +50,33 @@
 % Title page, input
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \listadd{\titlelines}%
-  {First Line of the Title}             %<Enter the title of the dissertation
-\listadd{\titlelines}%
-  {Second Line of the Title}            % If you want to
+  {Fostering Collaborative Solutions in the Opioid Overdose Crisis: Law Enforcement as a Potential Partner in Reducing Fatalities}             %<Enter the title of the dissertation
+%\listadd{\titlelines}%
+%  {Second Line of the Title}            % If you want to
                                         %   split the title across lines,
                                         %   use another \listadd command for the
                                         %   second line
-\newcommand*\Author{Your Name}          %<Enter your name; must match official transcript
+\newcommand*\Author{Seth Watts}          %<Enter your name; must match official transcript
 \newcommand*{\documentname}%
   {Dissertation}                        %<Enter the type of document (capitalized)
 \newcommand*{\degreename}
   {Doctor of Philosophy}                %<Enter the type of degree (capitalized)
-\newcommand*\defdate{Month Year}        %<Give month (written out fully) and year of
+\newcommand*\defdate{November 2024}        %<Give month (written out fully) and year of
                                         %   the oral defense
-\listadd{\committeechair}{Chair Name}   %<Enter committee chair name; use \listadd for
+\listadd{\committeechair}{Michael D. White}   %<Enter committee chair name; use \listadd for
 %\listadd{\committeechair}{Another name}%   for additional names
 \newcommand*{\chairlabel}{Chair}        %<If you have co-chairs, replace this text with
                                         %   'Co-Chair'
-\listadd{\committeemember}{Member Name} %<Enter committee member names; use \listadd for
-\listadd{\committeemember}{Member Name} %   additional names
-\newcommand*{\gradmonth}{Month}         %<Enter the graduation date; month can only be:
+\listadd{\committeemember}{Jacob T. N. Young} %<Enter committee member names; use \listadd for
+\listadd{\committeemember}{Alyssa W. Chamberlain}
+\listadd{\committeemember}{Brandon del Pozo}%   additional names
+\newcommand*{\gradmonth}{December}         %<Enter the graduation date; month can only be:
                                         %  May, August, or December
-\newcommand*{\gradyear}{Year}           %<Enter the graduation year, e.g. 2014
+\newcommand*{\gradyear}{2024}           %<Enter the graduation year, e.g. 2014
 
-\listadd{\keywords}{keyword 1}          %<Enter keywords; use \listadd for
-\listadd{\keywords}{keyword 2}          %   additional names (up to 6)
+\listadd{\keywords}{Police}          %<Enter keywords; use \listadd for
+\listadd{\keywords}{Public Health}
+\listadd{\keywords}{Opioids}%   additional names (up to 6)
 \newcommand*{\graddate}{\gradmonth%     % Compose full graduation date
   \space\gradyear}
 
@@ -775,9 +782,8 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Bibliography
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\newcommand{\bibfilename}{%             %<Enter the name of the *.bib file containing the
-  src/sample/library%                   %   reference information for sources cited in
-}%                                      %   the text. God help you if you're doing
+\newcommand{\bibfilename}{references.bib}            %<Enter the name of the *.bib file containing                                                  %   reference information for sources cited in
+                                         %   the text. God help you if you're doing
                                         %   citations manually.
 
 \newcommand{\bibheading}{References}    %<Enter the heading for the references section:
@@ -792,11 +798,15 @@
 \iftoggle{usebiblatex}{%                % Settings for citation package
 %                                       % Settings for 'biblatex' or a version of
 %                                       %   'biblatex'
-  \usepackage[authordate,%
-              backend=biber,%           % Recommend to use 'biber' instead of 'bibtex'
-              doi=only,%                % Avoid printing URLs
-              isbn=false]%              % Don't print ISBN numbers
-              {biblatex-chicago}        %~Other possibilities include: 'biblatex',
+
+\usepackage[style=apa, backend=biber]{biblatex}
+%\addbibresource{references.bib}
+
+ % \usepackage[authordate,
+ %             backend=biber,           % Recommend to use 'biber' instead of 'bibtex'
+ %             doi=only,                % Avoid printing URLs
+%            isbn=false]              % Don't print ISBN numbers
+%           {biblatex-chicago}        %~Other possibilities include: 'biblatex',
                                         %   'biblatex-apa', and 'biblatex-mla'
   \bibliography{\bibfilename}
   \setlength{\bibitemsep}%              % Set vertical distance between
@@ -804,15 +814,17 @@
   \setcounter{biburlnumpenalty}{9000}   % Break URLs in bibliography across lines
   \setcounter{biburlucpenalty}{9000}
   \setcounter{biburllcpenalty}{9000}
+  
 
-  \usepackage[style=american,%          % Settings for quotation marks; load after
-    english=american]{csquotes}%        %   'inputenc'; only use with biblatex; throws
+%\bibliographystyle{apalike}
+
+  \usepackage[style=american,english=american]{csquotes}        %   'inputenc'; only use with biblatex; throws
   \MakeOuterQuote{"}%                   %   error when used with natbib
 }{%                                     % Settings for 'natbib'
   \usepackage{natbib}%
-  \newcommand{\natbibstyle}{%           %~Enter the name of the *.bst file to use to
-    src/asudis%                         %   format citations with natbib. Default is
-  }%                                    %   'asudis'. I do not know where 'asudis' came
+ \newcommand{\natbibstyle}{src/asudis}          %~Enter the name of the *.bst file to use to
+                            %   format citations with natbib. Default is
+                                     %   'asudis'. I do not know where 'asudis' came
                                         %   from, but apparently it formats citations
                                         %   correctly because it was included with the
                                         %   previous LaTeX template.
@@ -1097,6 +1109,8 @@
                                         %   acknowledgments or omit this line and type in
                                         %   your acknowledgments here.
 
+
+
 \iftoggle{usemicrotype}                 % If 'microtype' is in use, turn off protrusion
   {\microtypesetup{protrusion=false}}%  %   for TOC
   {}
@@ -1163,9 +1177,11 @@
 % Body
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \mainmatter
-%\include{chapter1}                     %<Insert your chapters here; I recommend to use
-%\include{chapter2}                     %   \include rather than \input for chapters
-%\include{chapter3}% etc.
+\input{chapter1}                     %<Insert your chapters here; I recommend to use
+\input{chapter2}                     %   \include rather than \input for chapters
+\input{chapter3}
+\input{chapter4}
+\input{chapter5}
                                         % Heading commands (in descending order):
                                         % \chapter
                                         % \section
@@ -1249,9 +1265,9 @@
 \addcontentsline{toc}{part}{Appendix}   %~Add "Appendix" to TOC here; comment out this
                                         %   line if you're not including appendices
 
-%\phantomsection                        %!This is the one part of the template that I
-%\addtocontents{toc}%                   %   could not get to work properly. After you
-%  {\protect\markboth{APPENDIX}{Page}}  %   start listing appendices in the TOC,
+\phantomsection                        %!This is the one part of the template that I
+\addtocontents{toc}%                   %   could not get to work properly. After you
+%{\protect\markboth{APPENDIX}{Page}}  %   start listing appendices in the TOC,
                                         %   subsequent TOC pages should use "APPENDIX in
                                         %   the header instead of "CHAPTER"; however,
                                         %   this code will make "APPENDIX" appear on the
@@ -1263,9 +1279,9 @@
                                         %   lines down and checking the output until
                                         %   the TOC headers appear correctly
 
-%\input{appendix1}                       %~Insert your appendices here; I recommend to use
-%\input{appendix2}                       %   \input rather than \include for appendices.
-%\input{appendix3}% etc.                 %   All heading commands are the same as above,
+\input{appendix1}                       %~Insert your appendices here; I recommend to use
+\input{appendix2}                       %   \input rather than \include for appendices.
+\input{appendix3} % etc.                 %   All heading commands are the same as above,
                                          %   e.g., \chapter, \section, etc.
 \iftoggle{sample}{%
   \input{src/sample/appendix}%
