@@ -1,19 +1,49 @@
 \chapter{Collaborative Response to the Opioid Overdose Crisis: Evidence from a Quasi-Experimental Analysis}
 
 \section{Introduction}
+
+
 \section{Literature Review}
+
+\subsection{Police Role in Reducing Overdose Fatalities}
+
+\subsubsection{Law Enforcement Assisted Diversion (LEAD)}
+
+\subsubsection{Police Assisted Addiction Recovery Initiative (PAARI)}
+
+\subsection{Post-overdose Outreach Efforts}
+
 \subsection{}
 \section{Methods}
 \subsection{Setting}
+
 \subsection{Data}
+Data for this study come from three primary sources (TFMR data, Mesa open data, Census/ACS demographic estimates)
+
+Due to data constraints in obtaining monthly opioid overdose data at the city-level, I opted to use Mesa's open data portal which provides calls for service to opioid overdoses. This is the only open data portal in the state of Arizona that provides such data (Besides Tempe). The CDC provides monthly data, however, only at the county and state levels. Other opioid overdose data repositories that were considered did not have monthly data either.
+%\footnote{\url{https://drexel.edu/uhc/research/projects/BCHI/Drug%20Overdose%20Deaths%20in%20Big%20Cities/}}
+%and \url{https://skylab.cdph.ca.gov/ODdash/?tab=Home}
+
 \subsection{Dependent Variables}
 \subsection{Independent Variable}
 \subsection{Analytical Sample}
 \subsection{Analytical Plan}
+
+To evaluate the impact of the Tempe ORP, I use a Comparative Interrupted Time Series Design (CITS). This approach is employed for a few reasons. First, the interrupted time series design is a strong quasi-experimental modeling technique (CITES). It has been used to evaluate policy interventions in a variety disciplines including public health, epidemiology, and criminal justice. Second, this design allows for the researcher to account for baseline mean and trends of the outcome variable over time.
+
+I use Mesa as a location-based comparison group, which is a city in Arizona that is adjacent to Tempe. The use of Mesa as a comparison group is important for a few reasons. First, the comparison group improves the rigor of the single-group ITS (Interrupted Time Series) analysis by reducing the impact of confounding variables \parencite{shadish_experimental_2002}. The effects of Covid-19, for instance, began within a month or so of the start of the Tempe ORP. Thus, a single-group ITS would be limited in providing reliable estimates of program impact. Second, using Mesa as a location-based comparison group helps reduce the impact of other state-level or county-level exogenous shocks that may have occurred over the course of the study period that would. Lastly, the use of a comparison group builds upon prior evaluative work on collaborative post-overdose outreach programs that used single-group forecasting models \parencite{donnelly_law_2022}.
+
 \subsubsection{Segmented Generalized Least Squares (GLS) Regression Model}
 
 \[Y = \beta_0 + \beta_1 TX + \beta_2 T + \beta_3 TS + \beta_4 POST + \beta_5 TXT + \beta_6 TXTS + \beta_7 TXPOST + \epsilon \]
 
-Where \(Y\) is the outcome of interest (opioid overdose fatality rate per 100,000). \(\beta_0\) is the intercept of outcome \(Y\). \(\beta_1\) is the coefficient for a dummy treatment variable (=1 if group is in the treatment group). \(\beta_2\) represents the coefficient for time, which is a continuous measure. \(\beta_3\) is the coefficient for time since the intervention (=1 + \(t\) for months after treatment). \(\beta_4\) is the coefficient for the post-intervention period (=1 if in the post-treatment time period).  \(\beta_5\) corresponds to the coefficient of an interaction between the treatment dummy and time. \(\beta_6\) is the coefficient for an interaction between the treatment dummy and time since the intervention took place. Lastly, the \(\beta_7\) coefficient corresponds to an interaction between the treatment and post-intervention dummy variables. Error is captured by \(\epsilon\).
+Where \(Y\) is the outcome of interest (opioid overdose fatality rate per 100,000). \(\beta_0\) is the intercept of outcome \(Y\). \(\beta_1\) is the coefficient for a dummy treatment variable (= 1 if group is in the treatment group). \(\beta_2\) represents the coefficient for time, which is a continuous measure. \(\beta_3\) is the coefficient for time since the intervention (\(t\)= 1, 2, 3 ... \(T\) for months after treatment). \(\beta_4\) is the coefficient for the post-intervention period (= 1 if in the post-treatment time period).  \(\beta_5\) corresponds to the coefficient of an interaction between the treatment dummy and time. \(\beta_6\) is the coefficient for an interaction between the treatment dummy and time since the intervention took place. Lastly, the \(\beta_7\) coefficient corresponds to an interaction between the treatment and post-intervention dummy variables. Error is captured by \(\epsilon\).
+
+The above regression model is estimated in Stata \parencite{statacorp_stata_2023} using the \textit{xtgls} command. The \textit{xtgls} command is used because of the panel structure of the data (e.g., cities nested within months) and the flexibility of the generalized model. Panel heteroskedasticity was found using the \textit{xttest3} command in Stata, therefore I estimate the regression model to account for panel heteroskedasticity. Then, using the \textit{xtserial} command I test for first-order autocorrelation but no first-order autocorrelation is detected.  
 
 \section{Results}
+
+\section{Discussion}
+\subsection{Limitations}
+\subsection{Implications}
+\section{Conclusion}
