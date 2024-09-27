@@ -1,0 +1,33 @@
+\begin{table}[htbp]\centering
+\def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
+\caption{\centering Comparative Interrupted Time Series Model: Poisson and Negative Binomial}
+\begin{adjustbox}{max width=\linewidth}\begin{tabular}{l*{4}{D{.}{.}{-1}}}
+\toprule
+                &\multicolumn{2}{c}{OD calls for service per 100k}&\multicolumn{2}{c}{Fatal OD rate per 100k}\\\cmidrule(lr){2-3}\cmidrule(lr){4-5}
+                &\multicolumn{1}{c}{(1)}        &\multicolumn{1}{c}{(2)}        &\multicolumn{1}{c}{(3)}        &\multicolumn{1}{c}{(4)}        \\
+\midrule
+                &                 &                 &                 &                 \\
+Treatment       &2.801\sym{**} (0.409)        &2.760\sym{**} (0.382)        &1.677 (0.893)        &1.437 (0.680)        \\
+\addlinespace
+Time (months)   &1.039\sym{**} (0.011)        &1.038\sym{**} (0.010)        &1.094\sym{*} (0.039)        &1.080\sym{**} (0.029)        \\
+\addlinespace
+Treatment Time  &0.962\sym{**} (0.012)        &0.964\sym{**} (0.012)        &0.909\sym{*} (0.042)        &0.921\sym{*} (0.037)        \\
+\addlinespace
+Post-period     &1.283 (0.202)        &1.299 (0.196)        &1.525 (0.842)        &1.638 (0.810)        \\
+\addlinespace
+Treatment X Post-period&1.318 (0.494)        &1.311 (0.501)        &3.135 (4.006)        &2.795 (3.445)        \\
+\addlinespace
+Time since treatment&0.959\sym{**} (0.011)        &0.961\sym{**} (0.010)        &0.877\sym{**} (0.037)        &0.891\sym{**} (0.030)        \\
+\addlinespace
+Treatment X Time since treatment&1.018 (0.025)        &1.016 (0.025)        &1.064 (0.092)        &1.050 (0.086)        \\
+\midrule
+Observations    &       62        &       62        &       62        &       62        \\
+Chi^2           &  196.940        &  200.308        &   61.567        &   62.031        \\
+Log likelihood  & -227.860        & -224.111        & -154.214        & -143.372        \\
+Psuedo R^2      &    0.448        &    0.171        &    0.247        &    0.106        \\
+\bottomrule
+\multicolumn{5}{l}{\footnotesize Exponentiated coefficients; Standard errors in parentheses}\\
+\multicolumn{5}{l}{\footnotesize Models 1 and 3 are Poisson regressions, Models 2 and 4 are Negative binomial regressions}\\
+\multicolumn{5}{l}{\footnotesize \sym{*} \(p<0.05\), \sym{**} \(p<0.01\), \sym{**} \(p<0.001\)}\\
+\end{tabular}\end{adjustbox}
+\end{table}

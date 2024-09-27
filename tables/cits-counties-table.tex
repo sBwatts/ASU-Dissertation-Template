@@ -1,0 +1,31 @@
+\begin{table}[htbp]\centering
+\def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
+\caption{\centering Comparative Interrupted Time Series Model: County Comparison}
+\begin{adjustbox}{max width=\linewidth}\begin{tabular}{l*{2}{D{.}{.}{-1}}}
+\toprule
+                &\multicolumn{2}{c}{Fatal OD rate per 100k}\\\cmidrule(lr){2-3}
+                &\multicolumn{1}{c}{All counties}        &\multicolumn{1}{c}{Matched counties}        \\
+\midrule
+Time (months)   &0.012 (0.010)        &0.011\sym{**} (0.004)        \\
+\addlinespace
+Treatment       &-1.760\sym{**} (0.257)        &-0.145 (0.236)        \\
+\addlinespace
+Treatment X Time&0.001 (0.024)        &0.002 (0.023)        \\
+\addlinespace
+Post-period     &0.175 (0.172)        &0.082 (0.075)        \\
+\addlinespace
+Treatment X Post-period&0.035\sym{*} (0.015)        &0.024\sym{**} (0.007)        \\
+\addlinespace
+Time since treatment&0.246 (0.446)        &0.339 (0.421)        \\
+\addlinespace
+Treatment X Time since treatment&-0.073\sym{*} (0.033)        &-0.061\sym{*} (0.030)        \\
+\addlinespace
+Constant        &2.569\sym{**} (0.111)        &0.954\sym{**} (0.037)        \\
+\midrule
+Observations    &     2881        &      516        \\
+F-statistic     &   71.187        &   31.185        \\
+\bottomrule
+\multicolumn{3}{l}{\footnotesize Newey-West standard errors (AR 1)}\\
+\multicolumn{3}{l}{\footnotesize \sym{*} \(p<0.05\), \sym{**} \(p<0.01\), \sym{**} \(p<0.001\)}\\
+\end{tabular} \end{adjustbox}
+\end{table}

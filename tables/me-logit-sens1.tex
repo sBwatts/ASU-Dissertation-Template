@@ -1,0 +1,44 @@
+\begin{table}[htbp]\centering
+\def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
+\caption{Mixed-effects Logistic Regression Models Predicting PD and TFMR first to Administer Naloxone: Collapsed on PD and TFMR only sample}
+\begin{adjustbox}{max width=\linewidth}\begin{tabular}{l*{1}{c}}
+\toprule
+                &\multicolumn{1}{c}{PD naloxone first}\\
+\midrule
+\emph{Independent variable}&                 \\
+Violent crime rate (per 1000)&0.997\sym{**} (0.001)        \\
+\vspace{.05em} \\
+Initial dispatch complaint (ref = Overdose/poisioning)&                 \\
+Health/medical related&0.608\sym{*} (0.118)        \\
+Accidental injury&0.632 (0.707)        \\
+Public safety related&0.613 (0.677)        \\
+Mental health related&0.254\sym{**} (0.070)        \\
+Other           &0.359\sym{**} (0.063)        \\
+\vspace{.05em} \\
+Female          &0.795 (0.138)        \\
+\vspace{.05em} \\
+\emph{Block group predictors}&                 \\
+Violent crime spatial lag&1.011 (0.006)        \\
+Drug offense rate (per 1000)&1.011\sym{**} (0.002)        \\
+Drug offense spatial lag&0.989 (0.007)        \\
+Opioid OD rate logged&0.940 (0.118)        \\
+Opioid OD spatial lag&0.997 (0.008)        \\
+\% Unemployed   &0.993 (0.011)        \\
+\% Residential land&0.998 (0.003)        \\
+\% Owner occupied units&0.983 (0.010)        \\
+\% White        &1.014 (0.008)        \\
+\% Black        &1.029\sym{**} (0.011)        \\
+\% Hispanic     &1.010 (0.009)        \\
+Constant        &0.182\sym{*} (0.150)        \\
+\midrule
+Random intercept&1.000 (0.000)        \\
+\midrule
+Observations    &      951        \\
+Block groups    &  110        \\
+AIC             & 1143.275        \\
+BIC             & 1303.573        \\
+\bottomrule
+\multicolumn{2}{p{16cm}}{\footnotesize Clustered standard errors in parentheses. Month and year fixed effects included but not shown. Mean VIF value = 2.46, single highest VIF value = 7.49. Reference group is now TFMR administering first -- Not all other observations.}\\
+\multicolumn{2}{l}{\footnotesize \sym{*} \(p<0.05\), \sym{**} \(p<0.01\), \sym{**} \(p<0.001\)}\\
+\end{tabular} \end{adjustbox}
+\end{table}

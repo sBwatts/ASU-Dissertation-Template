@@ -1,0 +1,22 @@
+\begin{table}[htbp]\centering
+\def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
+\caption{\centering Pre-intervention Matched Counties}
+\begin{adjustbox}{max width=\linewidth}\begin{tabular}{l*{3}{c}}
+\toprule
+            County  &   p-value (Mean)  &   p-value (Trend)\\
+\midrule
+Alameda Cty, CA   & .8625924   &    .5803571 \\
+Bexar Cty, TX   & .6148369   &    .9453963 \\
+Harris Cty, TX   & .2922294   &    .6024597 \\
+Hennepin Cty, MN   & .2175354   &    .3762982 \\ 
+Kings Cty, NY   & .5647587   &    .9993532 \\
+Los Angeles Cty, CA   & .7731088   &    .7381632 \\
+Miami-Dade Cty, FL   & .8017277   &    .9932488 \\
+Naussau Cty, NY   & .2228909   &    .8503382 \\
+Orange Cty, CA  & .2560747   &    .6409142 \\
+Queens Cty, NY   & .3589493   &    .5034218 \\
+Tarrant Cty, TX   & .9684466   &    .4306192 \\
+\bottomrule
+\multicolumn{3}{p{10cm}}{\footnotesize Notes: p-value determines inclusion in comparison group in the \textit{itsamatch} command. Control time series that are not significantly different than the treatment time series are included. Here, the inclusion cutoff is .20. }\\
+\end{tabular} \end{adjustbox}
+\end{table}

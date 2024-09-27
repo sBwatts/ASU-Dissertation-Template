@@ -1,0 +1,42 @@
+\begin{table}[htbp]\centering
+\def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
+\caption{\centering Comparative Interrupted Time Series Models: Mesa Comparison}
+\begin{adjustbox}{max width=\linewidth}\begin{tabular}{l*{3}{D{.}{.}{-1}}}
+\toprule
+                &\multicolumn{1}{c}{OD calls for service per 100k}&\multicolumn{2}{c}{Fatal OD rate per 100k}\\\cmidrule(lr){2-2}\cmidrule(lr){3-4}
+                &\multicolumn{1}{c}{(1)}        &\multicolumn{1}{c}{(2)}        &\multicolumn{1}{c}{(3)}        \\
+\midrule
+Time (months)   &    0.363\sym{**}&    0.124        &    0.063\sym{*} \\
+                &  (0.128)        &  (0.062)        &  (0.028)        \\
+\addlinespace
+Treatment       &   12.576\sym{**}&    0.407        &    0.077        \\
+                &  (2.068)        &  (0.518)        &  (0.372)        \\
+\addlinespace
+Treatment X Time&   -0.324        &   -0.110        &   -0.050        \\
+                &  (0.192)        &  (0.067)        &  (0.037)        \\
+\addlinespace
+Post-period     &    1.781        &    0.372        &    1.322        \\
+                &  (2.223)        &  (1.106)        &  (0.756)        \\
+\addlinespace
+Treatment X Post-period&   -0.188        &   -0.158        &   -0.097        \\
+                &  (0.156)        &  (0.082)        &  (0.058)        \\
+\addlinespace
+Time since treatment&    0.579        &    0.006        &   -0.943        \\
+                &  (2.970)        &  (1.191)        &  (0.878)        \\
+\addlinespace
+Treatment X Time since treatment&    0.169        &    0.126        &    0.066        \\
+                &  (0.234)        &  (0.090)        &  (0.068)        \\
+\addlinespace
+Mesa outlier    &                 &                 &    5.864\sym{**}\\
+                &                 &                 &  (0.292)        \\
+\addlinespace
+Constant        &    7.466\sym{**}&    0.402        &    0.732\sym{*} \\
+                &  (1.001)        &  (0.458)        &  (0.280)        \\
+\midrule
+Observations    &       84        &       84        &       84        \\
+F-statistic     &   49.986        &    9.031        & 1065.290        \\
+\bottomrule
+\multicolumn{4}{l}{\footnotesize Newey-West standard errors (AR 1) for models 2 and 3}\\
+\multicolumn{4}{l}{\footnotesize \sym{*} \(p<0.05\), \sym{**} \(p<0.01\), \sym{**} \(p<0.001\)}\\
+\end{tabular} \end{adjustbox}
+\end{table}
