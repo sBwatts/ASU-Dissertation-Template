@@ -1,0 +1,23 @@
+\begin{table}[htbp]\centering
+\def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
+\caption{Fixed Effects Regression Models: Patrol only}
+\begin{tabular}{l*{3}{c}}
+\toprule
+                &\multicolumn{1}{c}{(1)}&\multicolumn{1}{c}{(2)}&\multicolumn{1}{c}{(3)}\\
+                &\multicolumn{1}{c}{Role of the police}&\multicolumn{1}{c}{Naloxone related beliefs}&\multicolumn{1}{c}{Stigma towards PWUOs}\\
+\midrule
+Wave 2          &0.250\sym{*} (0.102)         &-0.076 (0.086)         &-0.081 (0.095)         \\
+\addlinespace
+Wave 3          &0.176 (0.126)         &0.123 (0.107)         &0.179 (0.119)         \\
+\addlinespace
+Wave 4          &0.487\sym{***} (0.090)         &-0.085 (0.076)         &0.006 (0.084)         \\
+\addlinespace
+Constant        &2.792\sym{***} (0.060)         &2.268\sym{***} (0.051)         &2.407\sym{***} (0.057)         \\
+\midrule
+Observations    &      288         &      286         &      288         \\
+\(R^{2}\)       &    0.095         &    0.015         &    0.014         \\
+\bottomrule
+\multicolumn{4}{l}{\footnotesize Ref = Wave 1}\\
+\multicolumn{4}{l}{\footnotesize \sym{*} \(p<0.05\), \sym{**} \(p<0.01\), \sym{***} \(p<0.001\)}\\
+\end{tabular}
+\end{table}
