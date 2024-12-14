@@ -28,6 +28,7 @@
 \usepackage{caption}
 \usepackage{apacite}
 \usepackage{lscape}
+\usepackage{pdflscape}
 \usepackage{booktabs}
 \usepackage{rotating}
 \usepackage{adjustbox}
@@ -167,7 +168,7 @@
     % one on your local system or online.
   ]
 
-%  \setmathfont(Digits,Latin,Greek)%     %~Uncomment two lines to set a font for math%
+%\setmathfont(Digits,Latin,Greek)%     %~Uncomment two lines to set a font for math%
 %    {MATHFONT}
 \fi
 
@@ -301,17 +302,17 @@
 
 \setbeforesecskip{\divisionbeforeskip}  % Apply default formatting to all heading levels
 \setsecindent{\divisionindent}          % Note: If you change \setsecnumdepth above, you
-\setsecheadstyle{\divisionfont}         %   will need to set the indent for all lower
+\setsecheadstyle{\bfseries}         %   will need to set the indent for all lower
 \setaftersecskip{\divisionafterskip}    %   levels to '0pt'; otherwise, they will be
                                         %   preceded by unnecessary space
 \setbeforesubsecskip{\divisionbeforeskip}
 \setsubsecindent{\divisionindent}
-\setsubsecheadstyle{\divisionfont}
+\setsubsecheadstyle{\bfseries}
 \setaftersubsecskip{\divisionafterskip}
 
 \setbeforesubsubsecskip{\divisionbeforeskip}
 \setsubsubsecindent{\divisionindent}
-\setsubsubsecheadstyle{\divisionfont}
+\setsubsubsecheadstyle{\bfseries \itshape}
 \setaftersubsubsecskip{\divisionafterskip}
 
 \setbeforeparaskip{\divisionbeforeskip}
@@ -1207,20 +1208,20 @@
 \tolerance 500                          % Increase tolerance to prevent material extending into margins
 \hbadness 500
 
-\iftoggle{useendnotes}{%                % If you're using endnotes, output them here
-  \setsecnumdepth{none}                 % No section numbering in end notes
-  \bookmarksetup{startatroot}           % Make Notes appear at root level of PDF bookmarks
-  \phantomsection%                      % Need for hyperref
-  \addcontentsline{toc}{chapter}{%      % Add a chapter-level heading for
-    \hspace{-\cftchapterindent}%        %  Notes to the ToC
-    \notesname%
-  }%
-  \renewcommand*{\notedivision}{%
-    \chapter*{\notesname}%
-  }
-  \printpagenotes                       % Output the notes
-  \setsecnumdepth{all}%                 % Turn section numbering back on after printing
-}{}
+%\iftoggle{useendnotes}{%                % If you're using endnotes, output them here
+  %\setsecnumdepth{none}                 % No section numbering in end notes
+  %\bookmarksetup{startatroot}           % Make Notes appear at root level of PDF bookmarks
+  %\phantomsection%                      % Need for hyperref
+  %\addcontentsline{toc}{chapter}{%      % Add a chapter-level heading for
+    %\hspace{-\cftchapterindent}%        %  Notes to the ToC
+    %\notesname%
+  %}%
+  %\renewcommand*{\notedivision}{%
+  %  \chapter*{\notesname}%
+ % }
+  %\printpagenotes                       % Output the notes
+  %\setsecnumdepth{all}%                 % Turn section numbering back on after printing
+%}{}
 
 \bookmarksetup{startatroot}
 \chapter*{\bibheading}                  % In the running text, use a chapter-level heading
@@ -1263,13 +1264,13 @@
 \makeatother
 
 \phantomsection                         % Need '\phantomsection' to place hyperref
-                                        %   bookmark more accurately
-\addcontentsline{toc}{part}{Appendix}   %~Add "Appendix" to TOC here; comment out this
+%\addcontentsline{toc}{part}{Chapter}    % Add "Chapter" to TOC here at 'part' level
+%\phantomsection                                       %   bookmark more accurately
+ \addtocontents{toc}%                    % Add this 'mark' to TOC so subsequent pages use
+  {\protect\markboth{CHAPTER}{Page}}%~Add "Appendix" to TOC here; comment out this
                                         %   line if you're not including appendices
 
-\phantomsection                        %!This is the one part of the template that I
-\addtocontents{toc}%                   %   could not get to work properly. After you
-%{\protect\markboth{APPENDIX}{Page}}  %   start listing appendices in the TOC,
+
                                         %   subsequent TOC pages should use "APPENDIX in
                                         %   the header instead of "CHAPTER"; however,
                                         %   this code will make "APPENDIX" appear on the
@@ -1280,11 +1281,16 @@
                                         %   the appendices are listed. Keep moving these
                                         %   lines down and checking the output until
                                         %   the TOC headers appear correctly
-
+\addcontentsline{toc}{part}{Appendix}
 \input{appendix1}                       %~Insert your appendices here; I recommend to use
-\input{appendix2}                       %   \input rather than \include for appendices.
+\input{appendix2}  
+ %   \input rather than \include for appendices.
+%\phantomsection                        %!This is the one part of the template that I
+%\addtocontents{toc}%                   %   could not get to work properly. After you
+%{\protect\markboth{APPENDIX}{Page}}  %   start listing appendices in the TOC,    
+
 \input{appendix3} % etc.                 %   All heading commands are the same as above,
-                                         %   e.g., \chapter, \section, etc.
+                                     %   e.g., \chapter, \section, etc.
 \iftoggle{sample}{%
   \input{src/sample/appendix}%
 }{}

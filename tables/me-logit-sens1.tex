@@ -1,44 +1,51 @@
 \begin{table}[htbp]\centering
 \def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
-\caption{Mixed-effects Logistic Regression Models Predicting PD and TFMR first to Administer Naloxone: Collapsed on PD and TFMR only sample}
-\begin{adjustbox}{max width=\linewidth}\begin{tabular}{l*{1}{c}}
+\caption{Mixed-effects Logistic Regression Models Predicting PD and TFMR First to Administer Naloxone: PD and TFMR only}
+\begin{adjustbox}{max width=\linewidth}\begin{tabular}{l*{2}{D{.}{.}{-1}}}
 \toprule
-                &\multicolumn{1}{c}{PD naloxone first}\\
+                &\multicolumn{2}{c}{Police naloxone admin}\\\cmidrule(lr){2-3}
+                &\multicolumn{1}{c}{(1)}        &\multicolumn{1}{c}{(2)}        \\
 \midrule
-\emph{Independent variable}&                 \\
-Violent crime rate (per 1000)&0.997\sym{**} (0.001)        \\
+\emph{Independent variable}&                 &                 \\
+Violent crime rate (per 1000)&                 &0.995\sym{**} (0.001)        \\
 \vspace{.05em} \\
-Initial dispatch complaint (ref = Overdose/poisioning)&                 \\
-Health/medical related&0.608\sym{*} (0.118)        \\
-Accidental injury&0.632 (0.707)        \\
-Public safety related&0.613 (0.677)        \\
-Mental health related&0.254\sym{**} (0.070)        \\
-Other           &0.359\sym{**} (0.063)        \\
+Initial dispatch complaint (ref = Overdose/poisioning)&                 &                 \\
+Health/medical related&                 &0.659\sym{*} (0.135)        \\
+Accidental injury&                 &0.932 (1.005)        \\
+Public safety related&                 &0.280 (0.193)        \\
+Mental health related&                 &0.243\sym{**} (0.069)        \\
+Other           &                 &0.347\sym{**} (0.072)        \\
 \vspace{.05em} \\
-Female          &0.795 (0.138)        \\
+Female          &                 &0.779 (0.149)        \\
 \vspace{.05em} \\
-\emph{Block group predictors}&                 \\
-Violent crime spatial lag&1.011 (0.006)        \\
-Drug offense rate (per 1000)&1.011\sym{**} (0.002)        \\
-Drug offense spatial lag&0.989 (0.007)        \\
-Opioid OD rate logged&0.940 (0.118)        \\
-Opioid OD spatial lag&0.997 (0.008)        \\
-\% Unemployed   &0.993 (0.011)        \\
-\% Residential land&0.998 (0.003)        \\
-\% Owner occupied units&0.983 (0.010)        \\
-\% White        &1.014 (0.008)        \\
-\% Black        &1.029\sym{**} (0.011)        \\
-\% Hispanic     &1.010 (0.009)        \\
-Constant        &0.182\sym{*} (0.150)        \\
+Age range (ref = Aged 20 - 29)&                 &                 \\
+Younger than 20 &                 &0.786 (0.279)        \\
+Aged 30 - 39    &                 &0.881 (0.200)        \\
+Aged 40 - 59    &                 &0.454\sym{**} (0.100)        \\
+Aged 60 - 99    &                 &0.272\sym{**} (0.116)        \\
+\vspace{.05em} \\
+\emph{Block group predictors}&                 &                 \\
+Violent crime spatial lag&                 &1.011 (0.007)        \\
+Drug offense rate (per 1000)&                 &1.013\sym{**} (0.002)        \\
+Drug offense spatial lag&                 &0.985\sym{*} (0.008)        \\
+Opioid OD rate logged&                 &0.994 (0.149)        \\
+Opioid OD spatial lag&                 &1.000 (0.001)        \\
+Disadvantage&                 &1.079 (0.104)        \\
+\% Residential land&                 &0.995 (0.003)        \\
+\% Owner occupied units&                 &0.978 (0.013)        \\
+\% White        &                 &1.024\sym{*} (0.011)        \\
+\% Black        &                 &1.036\sym{**} (0.012)        \\
+\% Hispanic     &                 &1.013 (0.010)        \\
+Constant        &0.409\sym{**} (0.036)        &0.234 (0.263)        \\
 \midrule
-Random intercept&1.000 (0.000)        \\
+Random intercept&1.073 (0.067)        &1.000 (0.000)        \\
 \midrule
-Observations    &      951        \\
-Block groups    &  110        \\
-AIC             & 1143.275        \\
-BIC             & 1303.573        \\
+Observations    &      955        &      891        \\
+Block groups    &  112            &  106        \\
+AIC             & 1170.921        & 1060.195        \\
+BIC             & 1180.644        & 1381.282        \\
 \bottomrule
-\multicolumn{2}{p{16cm}}{\footnotesize Clustered standard errors in parentheses. Month and year fixed effects included but not shown. Mean VIF value = 2.46, single highest VIF value = 7.49. Reference group is now TFMR administering first -- Not all other observations.}\\
-\multicolumn{2}{l}{\footnotesize \sym{*} \(p<0.05\), \sym{**} \(p<0.01\), \sym{**} \(p<0.001\)}\\
+\multicolumn{3}{p{20cm}}{\footnotesize Exponentiated coefficients; Clustered standard errors in parentheses; Day of month, month, and year fixed effects included but not shown; Mean VIF value = 2.30, single highest VIF value = 9.95. Reference group is now TFMR administering first -- Not all other observations.}\\
+\multicolumn{3}{l}{\footnotesize \sym{*} \(p<0.05\), \sym{**} \(p<0.01\), \sym{**} \(p<0.001\)}\\
 \end{tabular} \end{adjustbox}
 \end{table}

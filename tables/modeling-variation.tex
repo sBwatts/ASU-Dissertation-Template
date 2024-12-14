@@ -1,0 +1,45 @@
+\begin{table}[htbp] 
+    \centering
+    \def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
+    \caption{Modeling Spatial Variation in Naloxone Administration} % Title of the table
+    \begin{adjustbox}{max width=\linewidth}
+        \begin{tabular}{lc}
+            \toprule
+            \textbf{Potential Predictors} & \textbf{Predictors Modeled} \\ 
+            \midrule
+            \textbf{Systems-level}$^{a}$ & \\
+            CAD system filtration of calls for service & \(\times\) \\
+            \midrule
+            \textbf{Community-level} & \\ 
+            Violent crime rate & \checkmark \\ 
+            Drug offense rate & \checkmark \\ 
+            Opioid overdose rate & \checkmark \\ 
+            Socioeconomic status & \checkmark \\ 
+            Racial demographics & \checkmark \\
+            Residential land use & \checkmark \\
+            Total call volume: Police & \(\times\) \\
+            Total call volume: Fire/EMS & \(\times\) \\
+            Naloxone availability & \(\times\) \\ 
+            Drug market shifts & \(\times\) \\
+            \midrule
+            \textbf{Agency-level}$^{b}$ & \\
+            Staffing levels & \(\times\) \\
+            Variation in deployment of resources & \(\times\) \\
+            \midrule
+            \textbf{Incident-level} & \\
+            Initial call for service description & \checkmark \\
+            Age of victim & \checkmark \\
+            Sex of victim & \checkmark \\
+            Location of incident (e.g., street, apartment, etc.) & \(\times\) \\
+            Response time & \(\times\) \\
+            Race of victim & \(\times\) \\
+            Time of day & \(\times\) \\
+            \midrule
+            \textbf{Individual-level} & \\
+            Experience and/or training to recognize an opioid overdose & \(\times\) \\
+            Personal biases towards drug use/naloxone & \(\times\) \\
+            \bottomrule
+            \multicolumn{2}{p{17cm}}{\footnotesize $^{a}$Dispatch systems vary in how PD and EMS/Fire are notified of calls for service (e.g., one system or two), this could drive some spatial variation; $^{b}$Agency-level predictors could be accounted for in the day-, month-, and year-fixed effects}\\
+        \end{tabular} 
+    \end{adjustbox}
+\end{table}
